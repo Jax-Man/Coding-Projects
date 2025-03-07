@@ -1,0 +1,85 @@
+@mixin justifyCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  
+  html {
+    box-sizing: border-box;
+  }
+  
+  body, div.container-fluid{
+    @include justifyCenter;
+    height: 100vh;
+    width: 100vw;
+  }
+  
+  div#quote-box {
+    @include justifyCenter;
+    flex-direction: column;
+    background-color: purple;
+    height: clamp(200px, 50%, fit-content);
+    width: clamp(400px, 40%, 600px);
+    
+    grid-auto-rows: minmax(40px, auto)
+  }
+  
+  div#quoteContainer {
+    height: 100%;
+    width: 100%;
+    @include justifyCenter;
+    flex-Direction: column;
+  }
+  
+  p#text {
+    @include justifyCenter;
+    font-size: 200%;
+    background-color: #C8A2C8;
+    height: minmax(70%, fit-content);
+    width: 90%;
+    margin: 20px 20px 0 20px;
+  }
+  
+  p#text:before, p#text:after {
+    content: '"';
+    font-size: 250%;
+    
+  }
+  
+  p#author {
+    margin-left: auto;
+    margin-right: 20px;
+    margin-top: 8px;
+    font-size: 130%
+  }
+  
+  p#author:before {
+    content: '-';
+    margin: 0;
+    margin-right: 5px;
+    font-size: 150%;
+  }
+  
+  div.buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    margin-bottom: 10px;
+  }
+  
+  div.social button {
+    display: inline-block;
+    width: 50px;
+    height: 40px;
+  }
+  
+  div.social a {
+    width: fit-content;
+    height: fit-content;
+  }
+  span.fa {
+    font-size: 200%;
+  }
+  
+  
